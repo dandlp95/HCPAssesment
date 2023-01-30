@@ -1,0 +1,120 @@
+:root {
+  --navy-blue: #2d3142;
+}
+
+.AppCSS {
+  background-size: cover;
+  background-position: top;
+  width: 100%;
+  background-color: var(--navy-blue);
+  font-family: Consolas;
+  height: 100vh;
+}
+
+.AppCSS .grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: var(--navy-blue);
+  height: 225vh;
+}
+
+.AppCSS .firstGrid h2 {
+  margin: 5rem 1rem;
+  font-size: 3rem;
+  color: white;
+}
+
+.AppCSS .firstGrid {
+  text-align: center;
+}
+
+.AppCSS .reset {
+  text-decoration: underline;
+  cursor: pointer;
+  color: white;
+  padding: 3rem 2rem;
+  font-size: 2.5rem;
+}
+
+.AppCSS .reset:active {
+  color: grey;
+}
+
+.AppCSS .buttons div:nth-child(2) {
+  margin-top: 2rem;
+}
+
+.AppCSS .users > div {
+  margin-top: 3rem;
+  animation-name: animate-user;
+  animation-timing-function: cubic-bezier(0.26, 0.53, 0.74, 1.48);
+  animation-duration: 0.5s;
+}
+
+@keyframes animate-user {
+  0% {
+    opacity: 0;
+    transform: scale(0.5, 0.5);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+}
+
+.AppCSS form{
+  background-color: var(--spanish-pink);
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 2rem;
+  margin-bottom: 1rem;
+}
+
+.AppCSS .loginInputDiv {
+  position: relative;
+}
+
+.AppCSS input{
+  width: 100%;
+  padding-top: 1rem;
+  font-size: 1.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0rem;
+  border-radius: 1px solid white;
+  box-sizing: border-box;
+  border-width: 0 0 2px;
+  border-color: black;
+  background-color: var(--spanish-pink);
+  outline: 0;
+  font-family: Consolas;
+  height: 5rem;
+  margin-top:2rem;
+}
+
+.AppCSS .loginInputDiv:first-child input {
+  font-family: "Montserrat", sans-serif;
+}
+
+.AppCSS .inFormContainer {
+  padding: 0rem 4rem 4rem 4rem;
+}
+
+.AppCSS .loginInputDiv input:focus ~ .floatingLabel,
+input:not(:focus):valid ~ .floatingLabel {
+  top: 30px;
+  bottom: 1px;
+  left: 10px;
+  font-size: 1.1rem;
+  opacity: 1;
+}
+
+.floatingLabel {
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 60px;
+  transition: 0.2s ease all;
+  font-size: 2rem;
+  color: var(--grey);
+}

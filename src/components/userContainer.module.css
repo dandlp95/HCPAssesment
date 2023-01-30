@@ -1,0 +1,17 @@
+:root {
+  --pastel-pink: #efafa9;
+  --spanish-pink: #f2bfba;
+  --grey: #808080;
+}
+
+.userContainer{
+    background-color: var(--spanish-pink);
+    font-family: Consolas;
+    padding: 1rem 3rem;
+    width: 25rem;
+    border-radius: 2rem;
+}
+
+.userContainer .Container>div{
+  margin-top: 0.75rem;
+}
