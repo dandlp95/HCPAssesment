@@ -71,7 +71,7 @@
   margin-bottom: 1rem;
 }
 
-.AppCSS .loginInputDiv {
+.AppCSS .credentialsInputDiv {
   position: relative;
 }
 
@@ -92,7 +92,7 @@
   margin-top:2rem;
 }
 
-.AppCSS .loginInputDiv:first-child input {
+.AppCSS .credentialsInputDiv:first-child input {
   font-family: "Montserrat", sans-serif;
 }
 
@@ -100,7 +100,7 @@
   padding: 0rem 4rem 4rem 4rem;
 }
 
-.AppCSS .loginInputDiv input:focus ~ .floatingLabel,
+.AppCSS .credentialsInputDiv input:focus ~ .floatingLabel,
 input:not(:focus):valid ~ .floatingLabel {
   top: 30px;
   bottom: 1px;

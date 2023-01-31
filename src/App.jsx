@@ -20,33 +20,38 @@ function App() {
     const response = await fetch(url, options);
     if (response.ok) {
       const data = await response.json();
-      setUsers(data);
+      setUsers(data.result);
       setDisabledGetBtn(true);
       setDisabledPostBtn(false);
+    } else {
+      alert("Some error happened.");
     }
   };
 
   const postUsers = async () => {
-    const options = {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify({
-        userid: "dadelapema@gmail.com",
-        password: "a62fbd46febd48e7a4d30a551922e9e5",
-        outputtype: "Json",
-        users: users,
-      }),
-    };
+    if (user && password) {
+      const options = {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify({
+          userid: user,
+          password: password,
+          outputtype: "Json",
+          users: users,
+        }),
+      };
 
-    const response = await fetch(url, options);
-    if (response.ok) {
-      alert("Data succesfully posted!");
+      const response = await fetch(url, options);
+      if (response.ok) {
+        alert("Data succesfully posted!");
+      } else {
+        alert(JSON.stringify((await response.json()).result));
+      }
     } else {
-      alert("Some error happened");
+      alert("Please enter userid and password");
     }
-    setDisabledPostBtn(true);
   };
 
   const reset = () => {
@@ -60,31 +65,9 @@ function App() {
       <div className={AppCSS.grid}>
         <div className={AppCSS.firstGrid}>
           <h2>Home Care Pulse Assesment</h2>
-          {/* <form>
-            <div>
-              <div>
-                <input
-                  required
-                  onChange={(e) => setUser(e.target.value)}
-                  type="text"
-                  name="user"
-                />
-                <label for="user">Userid: </label>
-              </div>
-              <div>
-                <input
-                  name="password"
-                  type="password"
-                  required
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-                <label for="password">Password: </label>
-              </div>
-            </div>
-          </form> */}
-          <form onSubmit={(e) => e.preventDefault} className={AppCSS.loginForm}>
+          <form onSubmit={(e) => e.preventDefault}>
             <div className={AppCSS.inFormContainer}>
-              <div className={AppCSS.loginInputDiv}>
+              <div className={AppCSS.credentialsInputDiv}>
                 <input
                   required
                   type="text"
@@ -95,10 +78,10 @@ function App() {
                   Username:{" "}
                 </label>
               </div>
-              <div className={AppCSS.loginInputDiv}>
+              <div className={AppCSS.credentialsInputDiv}>
                 <input
                   required
-                  type="password"
+                  type="text"
                   name="lPassword"
                   onChange={(e) => setPassword(e.target.value)}
                 />
