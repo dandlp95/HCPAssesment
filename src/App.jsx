@@ -75,10 +75,10 @@ function App() {
                   required
                   type="text"
                   onChange={(e) => setUser(e.target.value)}
-                  name="loginName"
+                  name="userid"
                 />
-                <label for="loginName" className={AppCSS.floatingLabel}>
-                  Username:{" "}
+                <label for="userid" className={AppCSS.floatingLabel}>
+                  user id:{" "}
                 </label>
               </div>
               <div className={AppCSS.credentialsInputDiv}>
