@@ -10,7 +10,10 @@ function App() {
   const [users, setUsers] = useState([]);
   const [user, setUser] = useState();
   const [password, setPassword] = useState();
-  const url = "https://localhost:7029/api/user";
+
+  // If there are issues calling the api, verify that the server is running on this url and change it accordingly.
+  const rootUrl = "https://localhost:5000"
+  const url = rootUrl + "/api/user";
 
   const getUsers = async () => {
     const options = {
